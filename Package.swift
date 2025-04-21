@@ -9,12 +9,11 @@ let package = Package(
     products: [
         .library(
             name: "WebAuthnKit",
-            targets: ["WebAuthnKit"]
-        )
+            targets: ["WebAuthnKit"])
     ],
     dependencies: [
         .package(url: "https://github.com/mxcl/PromiseKit.git", exact: "6.13.1"),
-        .package(url: "https://github.com/agens-no/EllipticCurveKeyPair.git", revision: "944ae5c89ca045e9f1a113b736706c73fc51d1c2"),
+        .package(url: "https://github.com/agens-no/EllipticCurveKeyPair.git", revision: "23c10206e15cf3276f25fad0b52cd5b16c9c6537"),
         .package(url: "https://github.com/teamprex/KeychainAccess.git", exact: "4.2.2"),
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", exact: "1.3.8"),
     ],
@@ -27,7 +26,5 @@ let package = Package(
                 "KeychainAccess",
                 "CryptoSwift",
             ],
-            path: "WebAuthnKit/Sources"
-        )
-    ]
-)
+            path: "WebAuthnKit/Sources")
+    ])
