@@ -13,7 +13,7 @@ import PromiseKit
 import CryptoSwift
 import UIKit
 
-public protocol UserConsentViewControllerDelegate: class {
+public protocol UserConsentViewControllerDelegate: AnyObject {
     func consentViewControllerWillDismiss(viewController: UIViewController)
 }
 

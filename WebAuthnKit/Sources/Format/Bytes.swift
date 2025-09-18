@@ -11,7 +11,7 @@ import Foundation
 public class Bytes {
     
     public static func fromHex(_ value: String) -> [UInt8] {
-        return Data(hex: value).bytes
+        return Data(hex: value).byteArray
     }
     
     public static func fromString(_ value: String) -> [UInt8] {
