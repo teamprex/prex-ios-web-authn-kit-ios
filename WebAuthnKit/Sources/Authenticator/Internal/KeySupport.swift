@@ -70,8 +70,8 @@ public class ECDSAKeySupport : KeySupport {
     public func sign(data: [UInt8], label: String, context: LAContext) -> Optional<[UInt8]> {
         do {
             let pair = self.createPair(label: label)
-            let signature = try pair.sign(Data(bytes: data), hash: .sha256, context: context)
-            return signature.bytes
+            let signature = try pair.sign(Data(data), hash: .sha256, context: context)
+            return signature.byteArray
         } catch let error {
             WAKLogger.debug("<ECDSAKeySupport> failed to sign: \(error)")
             return nil
@@ -83,7 +83,7 @@ public class ECDSAKeySupport : KeySupport {
         do {
             let pair = self.createPair(label: label)
             try pair.deleteKeyPair()
-            let publicKey = try pair.publicKey().data().DER.bytes
+            let publicKey = try pair.publicKey().data().DER.byteArray
             if publicKey.count != 91 {
                 WAKLogger.debug("<ECDSAKeySupport> length of pubKey should be 91: \(publicKey.count)")
                 return .failure(WAKError.other(.keyPairLength))

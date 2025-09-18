@@ -12,7 +12,7 @@ public class Base64 {
     
     
     public static func encodeBase64(_ bytes: [UInt8]) -> String {
-        return encodeBase64(Data(bytes: bytes))
+        return encodeBase64(Data(bytes))
     }
     
     public static func encodeBase64(_ data: Data) -> String {
@@ -20,7 +20,7 @@ public class Base64 {
     }
 
     public static func encodeBase64URL(_ bytes: [UInt8]) -> String {
-        return encodeBase64URL(Data(bytes: bytes))
+        return encodeBase64URL(Data(bytes))
     }
 
     public static func encodeBase64URL(_ data: Data) -> String {
